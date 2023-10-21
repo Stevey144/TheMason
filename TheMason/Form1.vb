@@ -99,6 +99,10 @@
 
 
     Private Sub FilterByOrderID_Click(sender As Object, e As EventArgs) Handles FilterByOrderID.Click
-        OrdersBindingSource.Filter = "OrderID = " + OrderIDFilterValue.Text
+        If OrderIDFilterValue.Text = "" Then
+            MsgBox("Please Enter An Order ID to Search")
+        Else
+            OrdersBindingSource.Filter = "OrderID = " + OrderIDFilterValue.Text
+        End If
     End Sub
 End Class
