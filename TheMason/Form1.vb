@@ -97,4 +97,8 @@
 
     End Sub
 
+
+    Private Sub FilterByOrderID_Click(sender As Object, e As EventArgs) Handles FilterByOrderID.Click
+        OrdersBindingSource.Filter = "OrderID = " + OrderIDFilterValue.Text
+    End Sub
 End Class

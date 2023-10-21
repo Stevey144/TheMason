@@ -92,6 +92,10 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.OrdersBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
+        Me.FilterByOrderID = New System.Windows.Forms.Button()
+        Me.OrderIDFilterValue = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         OrderIDLabel = New System.Windows.Forms.Label()
         TitleLabel = New System.Windows.Forms.Label()
         FirstNameLabel = New System.Windows.Forms.Label()
@@ -118,6 +122,7 @@ Partial Class Form1
         CType(Me.TheMasonDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrdersBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OrdersBindingNavigator.SuspendLayout()
+        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OrderIDLabel
@@ -677,7 +682,7 @@ Partial Class Form1
         Me.OrdersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.OrdersBindingNavigator.Name = "OrdersBindingNavigator"
         Me.OrdersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.OrdersBindingNavigator.Size = New System.Drawing.Size(1524, 38)
+        Me.OrdersBindingNavigator.Size = New System.Drawing.Size(1524, 33)
         Me.OrdersBindingNavigator.TabIndex = 1
         Me.OrdersBindingNavigator.Text = "BindingNavigator1"
         '
@@ -687,13 +692,13 @@ Partial Class Form1
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 33)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 28)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -703,7 +708,7 @@ Partial Class Form1
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
@@ -712,7 +717,7 @@ Partial Class Form1
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -721,13 +726,13 @@ Partial Class Form1
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 38)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 33)
         '
         'BindingNavigatorPositionItem
         '
@@ -742,7 +747,7 @@ Partial Class Form1
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 38)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 33)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -750,7 +755,7 @@ Partial Class Form1
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -759,27 +764,60 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 38)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 33)
         '
         'OrdersBindingNavigatorSaveItem
         '
         Me.OrdersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.OrdersBindingNavigatorSaveItem.Image = CType(resources.GetObject("OrdersBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.OrdersBindingNavigatorSaveItem.Name = "OrdersBindingNavigatorSaveItem"
-        Me.OrdersBindingNavigatorSaveItem.Size = New System.Drawing.Size(34, 33)
+        Me.OrdersBindingNavigatorSaveItem.Size = New System.Drawing.Size(34, 28)
         Me.OrdersBindingNavigatorSaveItem.Text = "Save Data"
+        '
+        'FileSystemWatcher1
+        '
+        Me.FileSystemWatcher1.EnableRaisingEvents = True
+        Me.FileSystemWatcher1.SynchronizingObject = Me
+        '
+        'FilterByOrderID
+        '
+        Me.FilterByOrderID.Location = New System.Drawing.Point(847, 7)
+        Me.FilterByOrderID.Name = "FilterByOrderID"
+        Me.FilterByOrderID.Size = New System.Drawing.Size(135, 33)
+        Me.FilterByOrderID.TabIndex = 2
+        Me.FilterByOrderID.Text = "Search"
+        Me.FilterByOrderID.UseVisualStyleBackColor = True
+        '
+        'OrderIDFilterValue
+        '
+        Me.OrderIDFilterValue.Location = New System.Drawing.Point(674, 10)
+        Me.OrderIDFilterValue.Name = "OrderIDFilterValue"
+        Me.OrderIDFilterValue.Size = New System.Drawing.Size(131, 26)
+        Me.OrderIDFilterValue.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(485, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(147, 20)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Search By Order ID"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1524, 861)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.OrderIDFilterValue)
+        Me.Controls.Add(Me.FilterByOrderID)
         Me.Controls.Add(Me.OrdersBindingNavigator)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form1"
@@ -791,6 +829,7 @@ Partial Class Form1
         CType(Me.OrdersBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OrdersBindingNavigator.ResumeLayout(False)
         Me.OrdersBindingNavigator.PerformLayout()
+        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -843,4 +882,8 @@ Partial Class Form1
     Friend WithEvents Save As Button
     Friend WithEvents NextData As Button
     Friend WithEvents Previous As Button
+    Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
+    Friend WithEvents Label1 As Label
+    Friend WithEvents OrderIDFilterValue As TextBox
+    Friend WithEvents FilterByOrderID As Button
 End Class
