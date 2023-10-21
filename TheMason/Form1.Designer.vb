@@ -362,9 +362,9 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.PaidCheckBox)
         Me.GroupBox1.Controls.Add(DatePaidLabel)
         Me.GroupBox1.Controls.Add(Me.DatePaidDateTimePicker)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 27)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 41)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1512, 834)
+        Me.GroupBox1.Size = New System.Drawing.Size(1512, 820)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = ""
@@ -617,7 +617,7 @@ Partial Class Form1
         Me.OrdersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.OrdersBindingNavigator.Name = "OrdersBindingNavigator"
         Me.OrdersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.OrdersBindingNavigator.Size = New System.Drawing.Size(1524, 38)
+        Me.OrdersBindingNavigator.Size = New System.Drawing.Size(1524, 33)
         Me.OrdersBindingNavigator.TabIndex = 1
         Me.OrdersBindingNavigator.Text = "BindingNavigator1"
         '
@@ -627,7 +627,7 @@ Partial Class Form1
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorCountItem
