@@ -33,6 +33,7 @@
         Me.Validate()
         Me.OrdersBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
+        MsgBox("Record Saved Sucessfully")
     End Sub
 
     Private Sub Delete_Click(sender As Object, e As EventArgs) Handles Delete.Click
@@ -40,6 +41,8 @@
             MsgBox("No Record Found")
         Else
             Me.OrdersBindingSource.RemoveCurrent()
+            Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
+            MsgBox("Record Delete Successfully")
         End If
 
     End Sub
