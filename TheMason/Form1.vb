@@ -54,22 +54,34 @@
     End Sub
 
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
-        Try
-            If IsNumeric(OrderIDTextBox.Text) Then
-                Me.Validate()
+
+        Dim Validation As Boolean = Me.Validate()
+
+        If Validation Then
+
+            Try
+
                 Me.OrdersBindingSource.EndEdit()
                 Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
-                MsgBox("Record Saved Sucessfully")
-            Else
-                MsgBox("The Value you have Entered is not A numeric Value")
-            End If
+                MsgBox("Record Saved Successfully")
+                OrdersBindingSource.MoveLast()
 
-        Catch ex As Exception
-            MsgBox(ex.ToString())
-            Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
-        End Try
+            Catch ex As Exception
 
+                MsgBox(ex.ToString())
+                Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
 
+            End Try
+
+        End If
+
+        If OrderIDTextBox.Text = "" Then
+            MsgBox("Order ID Field is  Required")
+        End If
+
+        If IsNumeric(OrderIDTextBox.Text) <> True And OrderIDTextBox.Text <> "" Then
+            MsgBox("The Value you have Entered is not A numeric Value")
+        End If
 
 
     End Sub
