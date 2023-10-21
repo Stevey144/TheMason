@@ -53,6 +53,10 @@
         OrdersBindingSource.MoveNext()
     End Sub
 
+    Protected Sub ReloadData()
+        Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+    End Sub
+
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
 
         Dim Validation As Boolean = Me.Validate()
@@ -100,9 +104,22 @@
 
     Private Sub FilterByOrderID_Click(sender As Object, e As EventArgs) Handles FilterByOrderID.Click
         If OrderIDFilterValue.Text = "" Then
+            Me.Controls.Clear()
+            InitializeComponent()
+            Form1_Load(sender, e)
             MsgBox("Please Enter An Order ID to Search")
+            Refresh()
         Else
             OrdersBindingSource.Filter = "OrderID = " + OrderIDFilterValue.Text
         End If
     End Sub
+
+    Private Sub Close_Click(sender As Object, e As EventArgs) Handles Close.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub Refresh_Click(sender As Object, e As EventArgs)
+        Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+    End Sub
+
 End Class
