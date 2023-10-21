@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim OrderIDLabel As System.Windows.Forms.Label
@@ -46,6 +46,11 @@ Partial Class Form1
         Dim DatePaidLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Close = New System.Windows.Forms.Button()
+        Me.Delete = New System.Windows.Forms.Button()
+        Me.Save = New System.Windows.Forms.Button()
+        Me.NextData = New System.Windows.Forms.Button()
+        Me.Previous = New System.Windows.Forms.Button()
         Me.OrderIDTextBox = New System.Windows.Forms.TextBox()
         Me.OrdersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TheMasonDataSet = New TheMason.TheMasonDataSet()
@@ -87,11 +92,6 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.OrdersBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.Previous = New System.Windows.Forms.Button()
-        Me.NextData = New System.Windows.Forms.Button()
-        Me.Save = New System.Windows.Forms.Button()
-        Me.Delete = New System.Windows.Forms.Button()
-        Me.Close = New System.Windows.Forms.Button()
         OrderIDLabel = New System.Windows.Forms.Label()
         TitleLabel = New System.Windows.Forms.Label()
         FirstNameLabel = New System.Windows.Forms.Label()
@@ -369,6 +369,66 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = ""
         '
+        'Close
+        '
+        Me.Close.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Close.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Close.Location = New System.Drawing.Point(726, 755)
+        Me.Close.Name = "Close"
+        Me.Close.Size = New System.Drawing.Size(147, 50)
+        Me.Close.TabIndex = 52
+        Me.Close.Text = "Close"
+        Me.Close.UseVisualStyleBackColor = False
+        '
+        'Delete
+        '
+        Me.Delete.BackColor = System.Drawing.Color.Maroon
+        Me.Delete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Delete.ForeColor = System.Drawing.Color.Snow
+        Me.Delete.Location = New System.Drawing.Point(558, 755)
+        Me.Delete.Name = "Delete"
+        Me.Delete.Size = New System.Drawing.Size(147, 50)
+        Me.Delete.TabIndex = 51
+        Me.Delete.Text = "Delete"
+        Me.Delete.UseVisualStyleBackColor = False
+        '
+        'Save
+        '
+        Me.Save.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Save.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Save.Location = New System.Drawing.Point(383, 755)
+        Me.Save.Name = "Save"
+        Me.Save.Size = New System.Drawing.Size(147, 50)
+        Me.Save.TabIndex = 50
+        Me.Save.Text = "Save"
+        Me.Save.UseVisualStyleBackColor = False
+        '
+        'NextData
+        '
+        Me.NextData.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.NextData.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NextData.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.NextData.Location = New System.Drawing.Point(205, 755)
+        Me.NextData.Name = "NextData"
+        Me.NextData.Size = New System.Drawing.Size(147, 50)
+        Me.NextData.TabIndex = 49
+        Me.NextData.Text = "Next"
+        Me.NextData.UseVisualStyleBackColor = False
+        '
+        'Previous
+        '
+        Me.Previous.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Previous.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Previous.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Previous.Location = New System.Drawing.Point(32, 755)
+        Me.Previous.Name = "Previous"
+        Me.Previous.Size = New System.Drawing.Size(147, 50)
+        Me.Previous.TabIndex = 48
+        Me.Previous.Text = "Previous"
+        Me.Previous.UseVisualStyleBackColor = False
+        '
         'OrderIDTextBox
         '
         Me.OrderIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OrdersBindingSource, "OrderID", True))
@@ -633,7 +693,7 @@ Partial Class Form1
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 33)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 28)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -643,7 +703,7 @@ Partial Class Form1
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
@@ -652,7 +712,7 @@ Partial Class Form1
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -661,13 +721,13 @@ Partial Class Form1
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 38)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 33)
         '
         'BindingNavigatorPositionItem
         '
@@ -682,7 +742,7 @@ Partial Class Form1
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 38)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 33)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -690,7 +750,7 @@ Partial Class Form1
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -699,81 +759,21 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(34, 33)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(34, 28)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 38)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 33)
         '
         'OrdersBindingNavigatorSaveItem
         '
         Me.OrdersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.OrdersBindingNavigatorSaveItem.Image = CType(resources.GetObject("OrdersBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.OrdersBindingNavigatorSaveItem.Name = "OrdersBindingNavigatorSaveItem"
-        Me.OrdersBindingNavigatorSaveItem.Size = New System.Drawing.Size(34, 33)
+        Me.OrdersBindingNavigatorSaveItem.Size = New System.Drawing.Size(34, 28)
         Me.OrdersBindingNavigatorSaveItem.Text = "Save Data"
-        '
-        'Previous
-        '
-        Me.Previous.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Previous.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Previous.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Previous.Location = New System.Drawing.Point(32, 755)
-        Me.Previous.Name = "Previous"
-        Me.Previous.Size = New System.Drawing.Size(147, 50)
-        Me.Previous.TabIndex = 48
-        Me.Previous.Text = "Previous"
-        Me.Previous.UseVisualStyleBackColor = False
-        '
-        'NextData
-        '
-        Me.NextData.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.NextData.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NextData.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.NextData.Location = New System.Drawing.Point(205, 755)
-        Me.NextData.Name = "NextData"
-        Me.NextData.Size = New System.Drawing.Size(147, 50)
-        Me.NextData.TabIndex = 49
-        Me.NextData.Text = "Next"
-        Me.NextData.UseVisualStyleBackColor = False
-        '
-        'Save
-        '
-        Me.Save.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Save.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Save.Location = New System.Drawing.Point(383, 755)
-        Me.Save.Name = "Save"
-        Me.Save.Size = New System.Drawing.Size(147, 50)
-        Me.Save.TabIndex = 50
-        Me.Save.Text = "Save"
-        Me.Save.UseVisualStyleBackColor = False
-        '
-        'Delete
-        '
-        Me.Delete.BackColor = System.Drawing.Color.Maroon
-        Me.Delete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Delete.ForeColor = System.Drawing.Color.Snow
-        Me.Delete.Location = New System.Drawing.Point(558, 755)
-        Me.Delete.Name = "Delete"
-        Me.Delete.Size = New System.Drawing.Size(147, 50)
-        Me.Delete.TabIndex = 51
-        Me.Delete.Text = "Delete"
-        Me.Delete.UseVisualStyleBackColor = False
-        '
-        'Close
-        '
-        Me.Close.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Close.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Close.Location = New System.Drawing.Point(726, 755)
-        Me.Close.Name = "Close"
-        Me.Close.Size = New System.Drawing.Size(147, 50)
-        Me.Close.TabIndex = 52
-        Me.Close.Text = "Close"
-        Me.Close.UseVisualStyleBackColor = False
         '
         'Form1
         '

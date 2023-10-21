@@ -22,7 +22,6 @@
 
     Private Sub Previous_Click(sender As Object, e As EventArgs) Handles Previous.Click
         OrdersBindingSource.MovePrevious()
-
     End Sub
 
     Private Sub NextData_Click(sender As Object, e As EventArgs) Handles NextData.Click
@@ -30,10 +29,25 @@
     End Sub
 
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
-        Me.Validate()
-        Me.OrdersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
-        MsgBox("Record Saved Sucessfully")
+        Try
+            If IsNumeric(OrderIDTextBox.Text) Then
+                Me.Validate()
+                Me.OrdersBindingSource.EndEdit()
+                Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
+                MsgBox("Record Saved Sucessfully")
+            Else
+
+                MsgBox("The Value you have Entered is not A numeric Value")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.ToString())
+            Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+        End Try
+
+
+
+
     End Sub
 
     Private Sub Delete_Click(sender As Object, e As EventArgs) Handles Delete.Click
