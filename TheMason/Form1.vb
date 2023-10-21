@@ -21,7 +21,11 @@
 
         End If
 
-        If IsNumeric(OrderIDTextBox.Text) <> True Then
+        If OrderIDTextBox.Text = "" Then
+            MsgBox("Order ID Field is  Required")
+        End If
+
+        If IsNumeric(OrderIDTextBox.Text) <> True And OrderIDTextBox.Text <> "" Then
             MsgBox("The Value you have Entered is not A numeric Value")
         End If
 
