@@ -1,8 +1,29 @@
 ﻿Public Class Form1
     Private Sub OrdersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles OrdersBindingNavigatorSaveItem.Click
-        Me.Validate()
-        Me.OrdersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
+
+        Dim Validation As Boolean = Me.Validate()
+
+        If Validation Then
+
+            Try
+
+                Me.OrdersBindingSource.EndEdit()
+                Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
+                MsgBox("Record Saved Successfully")
+                OrdersBindingSource.MoveLast()
+
+            Catch ex As Exception
+
+                MsgBox(ex.ToString())
+                Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+
+            End Try
+
+        End If
+
+        If IsNumeric(OrderIDTextBox.Text) <> True Then
+            MsgBox("The Value you have Entered is not A numeric Value")
+        End If
 
     End Sub
 
@@ -36,7 +57,6 @@
                 Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
                 MsgBox("Record Saved Sucessfully")
             Else
-
                 MsgBox("The Value you have Entered is not A numeric Value")
             End If
 
