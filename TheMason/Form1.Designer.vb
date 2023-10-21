@@ -717,48 +717,63 @@ Partial Class Form1
         '
         'Previous
         '
+        Me.Previous.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Previous.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Previous.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.Previous.Location = New System.Drawing.Point(32, 755)
         Me.Previous.Name = "Previous"
         Me.Previous.Size = New System.Drawing.Size(147, 50)
         Me.Previous.TabIndex = 48
         Me.Previous.Text = "Previous"
-        Me.Previous.UseVisualStyleBackColor = True
+        Me.Previous.UseVisualStyleBackColor = False
         '
         'NextData
         '
+        Me.NextData.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.NextData.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NextData.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.NextData.Location = New System.Drawing.Point(205, 755)
         Me.NextData.Name = "NextData"
         Me.NextData.Size = New System.Drawing.Size(147, 50)
         Me.NextData.TabIndex = 49
         Me.NextData.Text = "Next"
-        Me.NextData.UseVisualStyleBackColor = True
+        Me.NextData.UseVisualStyleBackColor = False
         '
         'Save
         '
+        Me.Save.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Save.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.Save.Location = New System.Drawing.Point(383, 755)
         Me.Save.Name = "Save"
         Me.Save.Size = New System.Drawing.Size(147, 50)
         Me.Save.TabIndex = 50
         Me.Save.Text = "Save"
-        Me.Save.UseVisualStyleBackColor = True
+        Me.Save.UseVisualStyleBackColor = False
         '
         'Delete
         '
+        Me.Delete.BackColor = System.Drawing.Color.Maroon
+        Me.Delete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Delete.ForeColor = System.Drawing.Color.Snow
         Me.Delete.Location = New System.Drawing.Point(558, 755)
         Me.Delete.Name = "Delete"
         Me.Delete.Size = New System.Drawing.Size(147, 50)
         Me.Delete.TabIndex = 51
         Me.Delete.Text = "Delete"
-        Me.Delete.UseVisualStyleBackColor = True
+        Me.Delete.UseVisualStyleBackColor = False
         '
         'Close
         '
+        Me.Close.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Close.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.Close.Location = New System.Drawing.Point(726, 755)
         Me.Close.Name = "Close"
         Me.Close.Size = New System.Drawing.Size(147, 50)
         Me.Close.TabIndex = 52
         Me.Close.Text = "Close"
-        Me.Close.UseVisualStyleBackColor = True
+        Me.Close.UseVisualStyleBackColor = False
         '
         'Form1
         '
