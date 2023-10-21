@@ -1,4 +1,7 @@
-﻿Public Class Form1
+﻿Imports System.DateTime
+Public Class Form1
+
+    Dim InscriptionAmount As Integer = 2
     Private Sub OrdersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles OrdersBindingNavigatorSaveItem.Click
 
         Dim Validation As Boolean = Me.Validate()
@@ -34,6 +37,7 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'TheMasonDataSet.Orders' table. You can move, or remove it, as needed.
         Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+        txtWeeks.Text = 7
 
     End Sub
 
@@ -110,7 +114,11 @@
             MsgBox("Please Enter An Order ID to Search")
             Refresh()
         Else
-            OrdersBindingSource.Filter = "OrderID = " + OrderIDFilterValue.Text
+            If IsNumeric(OrderIDFilterValue.Text) Then
+                OrdersBindingSource.Filter = "OrderID = " + OrderIDFilterValue.Text
+            Else
+                MsgBox("The Value you have entered is not a numeric value")
+            End If
         End If
     End Sub
 
@@ -122,4 +130,20 @@
         Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
     End Sub
 
+    Private Sub InscriptionTextBox_TextChanged(sender As Object, e As EventArgs) Handles InscriptionTextBox.TextChanged
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtWeeks.TextChanged
+
+    End Sub
+
+    Private Sub txtNewDate_TextChanged(sender As Object, e As EventArgs) Handles txtNewDate.TextChanged
+
+    End Sub
+    Private Sub txtWeeks_Leave(sender As Object, e As EventArgs) Handles txtWeeks.Leave
+        Dim dt As Date = Date.Now.AddDays(49)
+        txtNewDate.Text = dt.ToString()
+        MsgBox(txtNewDate.Text)
+    End Sub
 End Class
