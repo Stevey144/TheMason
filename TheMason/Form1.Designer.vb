@@ -46,8 +46,6 @@ Partial Class Form1
         Dim DatePaidLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtNewDate = New System.Windows.Forms.TextBox()
-        Me.txtWeeks = New System.Windows.Forms.TextBox()
         Me.Close = New System.Windows.Forms.Button()
         Me.Delete = New System.Windows.Forms.Button()
         Me.Save = New System.Windows.Forms.Button()
@@ -98,6 +96,9 @@ Partial Class Form1
         Me.FilterByOrderID = New System.Windows.Forms.Button()
         Me.OrderIDFilterValue = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
         OrderIDLabel = New System.Windows.Forms.Label()
         TitleLabel = New System.Windows.Forms.Label()
         FirstNameLabel = New System.Windows.Forms.Label()
@@ -238,7 +239,7 @@ Partial Class Form1
         'RecordDateLabel
         '
         RecordDateLabel.AutoSize = True
-        RecordDateLabel.Location = New System.Drawing.Point(1010, 133)
+        RecordDateLabel.Location = New System.Drawing.Point(1020, 133)
         RecordDateLabel.Name = "RecordDateLabel"
         RecordDateLabel.Size = New System.Drawing.Size(104, 20)
         RecordDateLabel.TabIndex = 30
@@ -256,11 +257,12 @@ Partial Class Form1
         'GraveOwnerLabel
         '
         GraveOwnerLabel.AutoSize = True
-        GraveOwnerLabel.Location = New System.Drawing.Point(1010, 189)
+        GraveOwnerLabel.Location = New System.Drawing.Point(1020, 189)
         GraveOwnerLabel.Name = "GraveOwnerLabel"
         GraveOwnerLabel.Size = New System.Drawing.Size(106, 20)
         GraveOwnerLabel.TabIndex = 34
         GraveOwnerLabel.Text = "Grave Owner:"
+        AddHandler GraveOwnerLabel.Click, AddressOf Me.GraveOwnerLabel_Click
         '
         'PlanYnLabel
         '
@@ -292,7 +294,7 @@ Partial Class Form1
         'SundriesLabel
         '
         SundriesLabel.AutoSize = True
-        SundriesLabel.Location = New System.Drawing.Point(1020, 442)
+        SundriesLabel.Location = New System.Drawing.Point(1020, 428)
         SundriesLabel.Name = "SundriesLabel"
         SundriesLabel.Size = New System.Drawing.Size(76, 20)
         SundriesLabel.TabIndex = 42
@@ -319,8 +321,6 @@ Partial Class Form1
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GroupBox1.Controls.Add(Me.txtNewDate)
-        Me.GroupBox1.Controls.Add(Me.txtWeeks)
         Me.GroupBox1.Controls.Add(Me.Close)
         Me.GroupBox1.Controls.Add(Me.Delete)
         Me.GroupBox1.Controls.Add(Me.Save)
@@ -377,20 +377,6 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = ""
-        '
-        'txtNewDate
-        '
-        Me.txtNewDate.Location = New System.Drawing.Point(1248, 44)
-        Me.txtNewDate.Name = "txtNewDate"
-        Me.txtNewDate.Size = New System.Drawing.Size(191, 26)
-        Me.txtNewDate.TabIndex = 53
-        '
-        'txtWeeks
-        '
-        Me.txtWeeks.Location = New System.Drawing.Point(1014, 44)
-        Me.txtWeeks.Name = "txtWeeks"
-        Me.txtWeeks.Size = New System.Drawing.Size(182, 26)
-        Me.txtWeeks.TabIndex = 5
         '
         'Close
         '
@@ -619,7 +605,7 @@ Partial Class Form1
         Me.GraveOwnerCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.OrdersBindingSource, "GraveOwner", True))
         Me.GraveOwnerCheckBox.Location = New System.Drawing.Point(1179, 185)
         Me.GraveOwnerCheckBox.Name = "GraveOwnerCheckBox"
-        Me.GraveOwnerCheckBox.Size = New System.Drawing.Size(123, 24)
+        Me.GraveOwnerCheckBox.Size = New System.Drawing.Size(30, 24)
         Me.GraveOwnerCheckBox.TabIndex = 35
         Me.GraveOwnerCheckBox.UseVisualStyleBackColor = True
         '
@@ -642,12 +628,14 @@ Partial Class Form1
         '
         'InscriptionTextBox
         '
+        Me.InscriptionTextBox.AccessibleDescription = ""
         Me.InscriptionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OrdersBindingSource, "Inscription", True))
-        Me.InscriptionTextBox.Location = New System.Drawing.Point(1140, 350)
+        Me.InscriptionTextBox.Location = New System.Drawing.Point(1140, 363)
         Me.InscriptionTextBox.Multiline = True
         Me.InscriptionTextBox.Name = "InscriptionTextBox"
-        Me.InscriptionTextBox.Size = New System.Drawing.Size(200, 43)
+        Me.InscriptionTextBox.Size = New System.Drawing.Size(151, 30)
         Me.InscriptionTextBox.TabIndex = 41
+        Me.InscriptionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SundriesTextBox
         '
@@ -655,8 +643,9 @@ Partial Class Form1
         Me.SundriesTextBox.Location = New System.Drawing.Point(1140, 425)
         Me.SundriesTextBox.Multiline = True
         Me.SundriesTextBox.Name = "SundriesTextBox"
-        Me.SundriesTextBox.Size = New System.Drawing.Size(200, 47)
+        Me.SundriesTextBox.Size = New System.Drawing.Size(151, 28)
         Me.SundriesTextBox.TabIndex = 43
+        Me.SundriesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PaidCheckBox
         '
@@ -828,6 +817,12 @@ Partial Class Form1
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Search By Order ID"
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -904,6 +899,8 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents OrderIDFilterValue As TextBox
     Friend WithEvents FilterByOrderID As Button
-    Friend WithEvents txtWeeks As TextBox
-    Friend WithEvents txtNewDate As TextBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ToolTip2 As ToolTip
+    Friend WithEvents ToolTip3 As ToolTip
 End Class

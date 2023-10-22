@@ -1,7 +1,5 @@
 ﻿Imports System.DateTime
 Public Class Form1
-
-    Dim InscriptionAmount As Integer = 2
     Private Sub OrdersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles OrdersBindingNavigatorSaveItem.Click
 
         Dim Validation As Boolean = Me.Validate()
@@ -37,17 +35,8 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'TheMasonDataSet.Orders' table. You can move, or remove it, as needed.
         Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
-        txtWeeks.Text = 7
-
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub AddressTextBox_TextChanged(sender As Object, e As EventArgs) Handles AddressTextBox.TextChanged
-
-    End Sub
 
     Private Sub Previous_Click(sender As Object, e As EventArgs) Handles Previous.Click
         OrdersBindingSource.MovePrevious()
@@ -126,24 +115,20 @@ Public Class Form1
         Application.Exit()
     End Sub
 
-    Private Sub Refresh_Click(sender As Object, e As EventArgs)
-        Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
-    End Sub
-
-    Private Sub InscriptionTextBox_TextChanged(sender As Object, e As EventArgs) Handles InscriptionTextBox.TextChanged
+    Private Sub GraveOwnerLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtWeeks.TextChanged
+    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip1.Opening
 
     End Sub
 
-    Private Sub txtNewDate_TextChanged(sender As Object, e As EventArgs) Handles txtNewDate.TextChanged
+    Private Sub InscriptionTextBox_MouseDown(sender As Object, e As MouseEventArgs) Handles InscriptionTextBox.MouseDown
+        ToolTip2.Show("0.00", InscriptionTextBox)
+    End Sub
 
+    Private Sub SundriesTextBox_MouseDown(sender As Object, e As MouseEventArgs) Handles SundriesTextBox.MouseDown
+        ToolTip3.Show("0.00", SundriesTextBox)
     End Sub
-    Private Sub txtWeeks_Leave(sender As Object, e As EventArgs) Handles txtWeeks.Leave
-        Dim dt As Date = Date.Now.AddDays(49)
-        txtNewDate.Text = dt.ToString()
-        MsgBox(txtNewDate.Text)
-    End Sub
+
 End Class
