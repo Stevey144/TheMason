@@ -115,13 +115,6 @@ Public Class Form1
         Application.Exit()
     End Sub
 
-    Private Sub GraveOwnerLabel_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip1.Opening
-
-    End Sub
 
     Private Sub InscriptionTextBox_MouseDown(sender As Object, e As MouseEventArgs) Handles InscriptionTextBox.MouseDown
         ToolTip2.Show("0.00", InscriptionTextBox)
