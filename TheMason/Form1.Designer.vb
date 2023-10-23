@@ -46,6 +46,10 @@ Partial Class Form1
         Dim DatePaidLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblNewDate = New System.Windows.Forms.Label()
+        Me.txtNewDate = New System.Windows.Forms.TextBox()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.txtWeeks = New System.Windows.Forms.TextBox()
         Me.Close = New System.Windows.Forms.Button()
         Me.Delete = New System.Windows.Forms.Button()
         Me.Save = New System.Windows.Forms.Button()
@@ -320,6 +324,10 @@ Partial Class Form1
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.lblNewDate)
+        Me.GroupBox1.Controls.Add(Me.txtNewDate)
+        Me.GroupBox1.Controls.Add(Me.lblName)
+        Me.GroupBox1.Controls.Add(Me.txtWeeks)
         Me.GroupBox1.Controls.Add(Me.Close)
         Me.GroupBox1.Controls.Add(Me.Delete)
         Me.GroupBox1.Controls.Add(Me.Save)
@@ -376,6 +384,38 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = ""
+        '
+        'lblNewDate
+        '
+        Me.lblNewDate.AutoSize = True
+        Me.lblNewDate.Location = New System.Drawing.Point(1020, 92)
+        Me.lblNewDate.Name = "lblNewDate"
+        Me.lblNewDate.Size = New System.Drawing.Size(79, 20)
+        Me.lblNewDate.TabIndex = 56
+        Me.lblNewDate.Text = "New Date"
+        '
+        'txtNewDate
+        '
+        Me.txtNewDate.Location = New System.Drawing.Point(1140, 86)
+        Me.txtNewDate.Name = "txtNewDate"
+        Me.txtNewDate.Size = New System.Drawing.Size(200, 26)
+        Me.txtNewDate.TabIndex = 55
+        '
+        'lblName
+        '
+        Me.lblName.AutoSize = True
+        Me.lblName.Location = New System.Drawing.Point(1020, 50)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(58, 20)
+        Me.lblName.TabIndex = 54
+        Me.lblName.Text = "Weeks"
+        '
+        'txtWeeks
+        '
+        Me.txtWeeks.Location = New System.Drawing.Point(1140, 43)
+        Me.txtWeeks.Name = "txtWeeks"
+        Me.txtWeeks.Size = New System.Drawing.Size(200, 26)
+        Me.txtWeeks.TabIndex = 53
         '
         'Close
         '
@@ -587,7 +627,7 @@ Partial Class Form1
         Me.RecordDateDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.OrdersBindingSource, "RecordDate", True))
         Me.RecordDateDateTimePicker.Location = New System.Drawing.Point(1140, 127)
         Me.RecordDateDateTimePicker.Name = "RecordDateDateTimePicker"
-        Me.RecordDateDateTimePicker.Size = New System.Drawing.Size(200, 26)
+        Me.RecordDateDateTimePicker.Size = New System.Drawing.Size(275, 26)
         Me.RecordDateDateTimePicker.TabIndex = 31
         '
         'OrderDetailsTextBox
@@ -622,7 +662,7 @@ Partial Class Form1
         Me.PlanGoneDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.OrdersBindingSource, "PlanGone", True))
         Me.PlanGoneDateTimePicker.Location = New System.Drawing.Point(1140, 300)
         Me.PlanGoneDateTimePicker.Name = "PlanGoneDateTimePicker"
-        Me.PlanGoneDateTimePicker.Size = New System.Drawing.Size(200, 26)
+        Me.PlanGoneDateTimePicker.Size = New System.Drawing.Size(275, 26)
         Me.PlanGoneDateTimePicker.TabIndex = 39
         '
         'InscriptionTextBox
@@ -902,4 +942,8 @@ Partial Class Form1
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents ToolTip2 As ToolTip
     Friend WithEvents ToolTip3 As ToolTip
+    Friend WithEvents lblNewDate As Label
+    Friend WithEvents txtNewDate As TextBox
+    Friend WithEvents lblName As Label
+    Friend WithEvents txtWeeks As TextBox
 End Class

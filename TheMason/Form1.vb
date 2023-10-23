@@ -1,4 +1,4 @@
-﻿Imports System.DateTime
+﻿Imports System.Globalization.CultureInfo
 Public Class Form1
     Private Sub OrdersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles OrdersBindingNavigatorSaveItem.Click
 
@@ -11,8 +11,6 @@ Public Class Form1
                 Me.OrdersBindingSource.EndEdit()
                 Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
                 MsgBox("Record Saved Successfully")
-                OrdersBindingSource.MoveLast()
-
             Catch ex As Exception
 
                 MsgBox(ex.ToString())
@@ -35,6 +33,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'TheMasonDataSet.Orders' table. You can move, or remove it, as needed.
         Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+        txtWeeks.Text = "7"
     End Sub
 
 
@@ -61,7 +60,6 @@ Public Class Form1
                 Me.OrdersBindingSource.EndEdit()
                 Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
                 MsgBox("Record Saved Successfully")
-                OrdersBindingSource.MoveLast()
 
             Catch ex As Exception
 
@@ -122,6 +120,11 @@ Public Class Form1
 
     Private Sub SundriesTextBox_MouseDown(sender As Object, e As MouseEventArgs) Handles SundriesTextBox.MouseDown
         ToolTip3.Show("0.00", SundriesTextBox)
+    End Sub
+
+    Private Sub txtWeeks_Leave(sender As Object, e As EventArgs) Handles txtWeeks.Leave
+        Dim getRecordDate As DateTime = DateTime.Parse(RecordDateDateTimePicker.Text)
+        txtNewDate.Text = getRecordDate.AddDays(49)
     End Sub
 
 End Class
