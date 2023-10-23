@@ -1,13 +1,13 @@
-C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.exe.config
-C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.exe
-C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.pdb
-C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.xml
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.vbproj.AssemblyReference.cache
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.vbproj.SuggestedBindingRedirects.cache
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.Form1.resources
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.Resources.resources
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.vbproj.GenerateResource.cache
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.vbproj.CoreCompileInputs.cache
+C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.exe.config
+C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.exe
+C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.pdb
+C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.xml
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.exe
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.xml
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.pdb

@@ -262,7 +262,6 @@ Partial Class Form1
         GraveOwnerLabel.Size = New System.Drawing.Size(106, 20)
         GraveOwnerLabel.TabIndex = 34
         GraveOwnerLabel.Text = "Grave Owner:"
-        AddHandler GraveOwnerLabel.Click, AddressOf Me.GraveOwnerLabel_Click
         '
         'PlanYnLabel
         '
@@ -605,7 +604,7 @@ Partial Class Form1
         Me.GraveOwnerCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.OrdersBindingSource, "GraveOwner", True))
         Me.GraveOwnerCheckBox.Location = New System.Drawing.Point(1179, 185)
         Me.GraveOwnerCheckBox.Name = "GraveOwnerCheckBox"
-        Me.GraveOwnerCheckBox.Size = New System.Drawing.Size(30, 24)
+        Me.GraveOwnerCheckBox.Size = New System.Drawing.Size(17, 24)
         Me.GraveOwnerCheckBox.TabIndex = 35
         Me.GraveOwnerCheckBox.UseVisualStyleBackColor = True
         '
@@ -614,7 +613,7 @@ Partial Class Form1
         Me.PlanYnCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.OrdersBindingSource, "PlanYn", True))
         Me.PlanYnCheckBox.Location = New System.Drawing.Point(1179, 236)
         Me.PlanYnCheckBox.Name = "PlanYnCheckBox"
-        Me.PlanYnCheckBox.Size = New System.Drawing.Size(54, 24)
+        Me.PlanYnCheckBox.Size = New System.Drawing.Size(17, 24)
         Me.PlanYnCheckBox.TabIndex = 37
         Me.PlanYnCheckBox.UseVisualStyleBackColor = True
         '
