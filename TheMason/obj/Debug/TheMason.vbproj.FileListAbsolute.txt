@@ -11,3 +11,7 @@ C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMason.xml
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.exe
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.xml
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\obj\Debug\TheMason.pdb
+C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMasonDataSet.Designer.vb
+C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMasonDataSet.xsc
+C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMasonDataSet.xsd
+C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMasonDataSet.xss

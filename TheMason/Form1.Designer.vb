@@ -46,6 +46,9 @@ Partial Class Form1
         Dim DatePaidLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.OrdersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TheMasonDataSet = New TheMason.TheMasonDataSet()
         Me.lblNewDate = New System.Windows.Forms.Label()
         Me.txtNewDate = New System.Windows.Forms.TextBox()
         Me.lblName = New System.Windows.Forms.Label()
@@ -56,9 +59,6 @@ Partial Class Form1
         Me.NextData = New System.Windows.Forms.Button()
         Me.Previous = New System.Windows.Forms.Button()
         Me.OrderIDTextBox = New System.Windows.Forms.TextBox()
-        Me.OrdersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TheMasonDataSet = New TheMason.TheMasonDataSet()
-        Me.TitleTextBox = New System.Windows.Forms.TextBox()
         Me.FirstNameTextBox = New System.Windows.Forms.TextBox()
         Me.LastNameTextBox = New System.Windows.Forms.TextBox()
         Me.CompanyNameTextBox = New System.Windows.Forms.TextBox()
@@ -324,6 +324,7 @@ Partial Class Form1
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.lblNewDate)
         Me.GroupBox1.Controls.Add(Me.txtNewDate)
         Me.GroupBox1.Controls.Add(Me.lblName)
@@ -336,7 +337,6 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(OrderIDLabel)
         Me.GroupBox1.Controls.Add(Me.OrderIDTextBox)
         Me.GroupBox1.Controls.Add(TitleLabel)
-        Me.GroupBox1.Controls.Add(Me.TitleTextBox)
         Me.GroupBox1.Controls.Add(FirstNameLabel)
         Me.GroupBox1.Controls.Add(Me.FirstNameTextBox)
         Me.GroupBox1.Controls.Add(LastNameLabel)
@@ -384,6 +384,25 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = ""
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OrdersBindingSource, "Title", True))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(30, 130)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(131, 28)
+        Me.ComboBox1.TabIndex = 57
+        '
+        'OrdersBindingSource
+        '
+        Me.OrdersBindingSource.DataMember = "Orders"
+        Me.OrdersBindingSource.DataSource = Me.TheMasonDataSet
+        '
+        'TheMasonDataSet
+        '
+        Me.TheMasonDataSet.DataSetName = "TheMasonDataSet"
+        Me.TheMasonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'lblNewDate
         '
@@ -485,25 +504,6 @@ Partial Class Form1
         Me.OrderIDTextBox.Name = "OrderIDTextBox"
         Me.OrderIDTextBox.Size = New System.Drawing.Size(200, 43)
         Me.OrderIDTextBox.TabIndex = 1
-        '
-        'OrdersBindingSource
-        '
-        Me.OrdersBindingSource.DataMember = "Orders"
-        Me.OrdersBindingSource.DataSource = Me.TheMasonDataSet
-        '
-        'TheMasonDataSet
-        '
-        Me.TheMasonDataSet.DataSetName = "TheMasonDataSet"
-        Me.TheMasonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TitleTextBox
-        '
-        Me.TitleTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OrdersBindingSource, "Title", True))
-        Me.TitleTextBox.Location = New System.Drawing.Point(30, 130)
-        Me.TitleTextBox.Multiline = True
-        Me.TitleTextBox.Name = "TitleTextBox"
-        Me.TitleTextBox.Size = New System.Drawing.Size(200, 44)
-        Me.TitleTextBox.TabIndex = 3
         '
         'FirstNameTextBox
         '
@@ -728,7 +728,7 @@ Partial Class Form1
         Me.OrdersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.OrdersBindingNavigator.Name = "OrdersBindingNavigator"
         Me.OrdersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.OrdersBindingNavigator.Size = New System.Drawing.Size(1524, 33)
+        Me.OrdersBindingNavigator.Size = New System.Drawing.Size(1524, 38)
         Me.OrdersBindingNavigator.TabIndex = 1
         Me.OrdersBindingNavigator.Text = "BindingNavigator1"
         '
@@ -738,13 +738,13 @@ Partial Class Form1
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 28)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(54, 33)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -754,7 +754,7 @@ Partial Class Form1
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
@@ -763,7 +763,7 @@ Partial Class Form1
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -772,13 +772,13 @@ Partial Class Form1
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 33)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 38)
         '
         'BindingNavigatorPositionItem
         '
@@ -793,7 +793,7 @@ Partial Class Form1
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 33)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 38)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -801,7 +801,7 @@ Partial Class Form1
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -810,20 +810,20 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(34, 28)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(34, 33)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 33)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 38)
         '
         'OrdersBindingNavigatorSaveItem
         '
         Me.OrdersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.OrdersBindingNavigatorSaveItem.Image = CType(resources.GetObject("OrdersBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.OrdersBindingNavigatorSaveItem.Name = "OrdersBindingNavigatorSaveItem"
-        Me.OrdersBindingNavigatorSaveItem.Size = New System.Drawing.Size(34, 28)
+        Me.OrdersBindingNavigatorSaveItem.Size = New System.Drawing.Size(34, 33)
         Me.OrdersBindingNavigatorSaveItem.Text = "Save Data"
         '
         'FileSystemWatcher1
@@ -906,7 +906,6 @@ Partial Class Form1
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents OrdersBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents OrderIDTextBox As TextBox
-    Friend WithEvents TitleTextBox As TextBox
     Friend WithEvents FirstNameTextBox As TextBox
     Friend WithEvents LastNameTextBox As TextBox
     Friend WithEvents CompanyNameTextBox As TextBox
@@ -946,4 +945,5 @@ Partial Class Form1
     Friend WithEvents txtNewDate As TextBox
     Friend WithEvents lblName As Label
     Friend WithEvents txtWeeks As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

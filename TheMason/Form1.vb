@@ -32,8 +32,44 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'TheMasonDataSet.Orders' table. You can move, or remove it, as needed.
+
+        Dim combo As List(Of String) = New List(Of String)()
+
+        combo.Add("MR")
+        combo.Add("MRS")
+
+        ComboBox1.Items.Add(combo)
+
+        ComboBox1.DisplayMember = "ToString"
+        ComboBox1.DataSource = combo
+
         Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+
+
+        Dim selectedValues = ""
+
+        If OrdersBindingSource.Count > 0 Then
+            If ComboBox1.SelectedItem = "" Then
+                ComboBox1.SelectedIndex = 0
+            Else
+                selectedValues = ComboBox1.SelectedItem.ToString()
+            End If
+        End If
+
+
+
+        If combo.Contains(selectedValues) Then
+            ComboBox1.SelectedItem = selectedValues
+        Else
+            ComboBox1.SelectedIndex = 0
+        End If
+
         txtWeeks.Text = "7"
+
+        If OrdersBindingSource.Count < 1 Then
+            OrdersBindingSource.AddNew()
+        End If
+
     End Sub
 
 
@@ -127,4 +163,22 @@ Public Class Form1
         txtNewDate.Text = getRecordDate.AddDays(49)
     End Sub
 
+    Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorDeleteItem.Click
+        If (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo) = DialogResult.Yes) Then
+            OrdersBindingSource.RemoveCurrent()
+            Try
+                Me.Validate()
+                OrdersBindingSource.EndEdit()
+                TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
+                MessageBox.Show("The record has been deleted.")
+                If OrdersBindingSource.Count < 1 Then
+                    MessageBox.Show("USE THE PLUS ICON (+) ON THE NAVIGATOR TO ADD A NEW RECORD.")
+                End If
+                OrdersBindingSource.AddNew()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+        End If
+    End Sub
 End Class
