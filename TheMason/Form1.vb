@@ -11,6 +11,8 @@ Public Class Form1
                 Me.OrdersBindingSource.EndEdit()
                 Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
                 MsgBox("Record Saved Successfully")
+                TheMasonDataSet.Clear()
+                Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
             Catch ex As Exception
 
                 MsgBox(ex.ToString())
@@ -96,7 +98,8 @@ Public Class Form1
                 Me.OrdersBindingSource.EndEdit()
                 Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
                 MsgBox("Record Saved Successfully")
-
+                TheMasonDataSet.Clear()
+                Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
             Catch ex As Exception
 
                 MsgBox(ex.ToString())
