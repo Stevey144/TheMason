@@ -37,8 +37,28 @@ Public Class Form1
 
         Dim combo As List(Of String) = New List(Of String)()
 
-        combo.Add("MR")
-        combo.Add("MRS")
+        combo.Add("Mr")
+        combo.Add("Mrs")
+        combo.Add("Father")
+        combo.Add("Ft")
+        combo.Add("Lady")
+        combo.Add("Lord")
+        combo.Add("Miss")
+        combo.Add("Mon")
+        combo.Add("Ms")
+        combo.Add("Mx")
+        combo.Add("Dr.rer.nat.habil")
+        combo.Add("Prof")
+        combo.Add("Professor")
+        combo.Add("Professor Dame")
+        combo.Add("Professor Sir")
+        combo.Add("Rabbi")
+        combo.Add("Rev")
+        combo.Add("Reverend Dr")
+        combo.Add("Sir")
+        combo.Add("Sister")
+
+
 
         ComboBox1.Items.Add(combo)
 
@@ -184,4 +204,5 @@ Public Class Form1
 
         End If
     End Sub
+
 End Class
