@@ -12,6 +12,7 @@ Public Class Form1
                     Exit Sub
                 ElseIf IsNumeric(OrderIDTextBox.Text) <> True And OrderIDTextBox.Text <> "" Then
                     MsgBox("The Value you have Entered is not A numeric Value")
+                    Exit Sub
                 Else
                     Me.OrdersBindingSource.EndEdit()
                     Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
