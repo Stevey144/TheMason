@@ -15,3 +15,16 @@ C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMasonDataSet.Design
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMasonDataSet.xsc
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMasonDataSet.xsd
 C:\Users\STEPHEN\source\repos\TheMason\TheMason\bin\Debug\TheMasonDataSet.xss
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\bin\Debug\TheMason.accdb
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\bin\Debug\TheMason.exe.config
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\bin\Debug\TheMason.exe
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\bin\Debug\TheMason.pdb
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\bin\Debug\TheMason.xml
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\obj\Debug\TheMason.vbproj.AssemblyReference.cache
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\obj\Debug\TheMason.Form1.resources
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\obj\Debug\TheMason.Resources.resources
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\obj\Debug\TheMason.vbproj.GenerateResource.cache
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\obj\Debug\TheMason.vbproj.CoreCompileInputs.cache
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\obj\Debug\TheMason.exe
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\obj\Debug\TheMason.xml
+C:\Users\steph\OneDrive\Documents\TheMason\TheMason\obj\Debug\TheMason.pdb
