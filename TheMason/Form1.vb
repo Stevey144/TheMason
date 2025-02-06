@@ -7,12 +7,18 @@ Public Class Form1
         If Validation Then
 
             Try
-
-                Me.OrdersBindingSource.EndEdit()
-                Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
-                MsgBox("Record Saved Successfully")
-                TheMasonDataSet.Clear()
-                Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+                If OrderIDTextBox.Text = "" Then
+                    MsgBox("Order ID Field is  Required")
+                    Exit Sub
+                ElseIf IsNumeric(OrderIDTextBox.Text) <> True And OrderIDTextBox.Text <> "" Then
+                    MsgBox("The Value you have Entered is not A numeric Value")
+                Else
+                    Me.OrdersBindingSource.EndEdit()
+                    Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
+                    MsgBox("Record Saved Successfully")
+                    TheMasonDataSet.Clear()
+                    Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+                End If
             Catch ex As Exception
 
                 MsgBox(ex.ToString())
@@ -22,13 +28,7 @@ Public Class Form1
 
         End If
 
-        If OrderIDTextBox.Text = "" Then
-            MsgBox("Order ID Field is  Required")
-        End If
 
-        If IsNumeric(OrderIDTextBox.Text) <> True And OrderIDTextBox.Text <> "" Then
-            MsgBox("The Value you have Entered is not A numeric Value")
-        End If
 
     End Sub
 
@@ -114,12 +114,19 @@ Public Class Form1
         If Validation Then
 
             Try
-
-                Me.OrdersBindingSource.EndEdit()
-                Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
-                MsgBox("Record Saved Successfully")
-                TheMasonDataSet.Clear()
-                Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+                If OrderIDTextBox.Text = "" Then
+                    MsgBox("Order ID Field is  Required")
+                    Exit Sub
+                ElseIf IsNumeric(OrderIDTextBox.Text) <> True And OrderIDTextBox.Text <> "" Then
+                    MsgBox("The Value you have Entered is not A numeric Value")
+                    Exit Sub
+                Else
+                    Me.OrdersBindingSource.EndEdit()
+                    Me.TableAdapterManager.UpdateAll(Me.TheMasonDataSet)
+                    MsgBox("Record Saved Successfully")
+                    TheMasonDataSet.Clear()
+                    Me.OrdersTableAdapter.Fill(Me.TheMasonDataSet.Orders)
+                End If
             Catch ex As Exception
 
                 MsgBox(ex.ToString())
@@ -127,14 +134,6 @@ Public Class Form1
 
             End Try
 
-        End If
-
-        If OrderIDTextBox.Text = "" Then
-            MsgBox("Order ID Field is  Required")
-        End If
-
-        If IsNumeric(OrderIDTextBox.Text) <> True And OrderIDTextBox.Text <> "" Then
-            MsgBox("The Value you have Entered is not A numeric Value")
         End If
 
 
